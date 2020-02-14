@@ -1,0 +1,20 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: RocketMQSource
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: rocketmqsource
+spec:
+  serviceAccountName: alirocketmqsource-sa
+  accessToken:
+    secretKeyRef:
+      name: alirocketmqsource-secret
+      key: alirocketmqsource
+  topic: topic-knative
+ # namesrvAddr: 101.200.125.226:9876
+  groupName: GID_Knative
+  namespace: MQ_INST_1124876893846781_BcF4df8k
+  sink:
+    apiVersion: eventing.knative.dev/v1alpha1
+    kind: Broker
+    name: weather

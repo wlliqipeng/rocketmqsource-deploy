@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1beta1
+kind: Service
+metadata:
+  name: day-weather
+spec:
+  template:
+    spec:
+      containers:
+      - args:
+        - --dingtalkurl=https://oapi.dingtalk.com/robot/send?access_token=d912f5c01e300690cbb29d25320a0011f3171fe0e8e3a9e6107317df8e44bd0f
+        - --adcode=1001
+        - --date=2019-10-20
+        - --dayweather=qing
+        image: registry.cn-hangzhou.aliyuncs.com/knative-sample/dingtalk-weather-service:1.2

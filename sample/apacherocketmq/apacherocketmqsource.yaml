@@ -1,0 +1,14 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: RocketMQSource
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: apacherocketmqsource
+spec:
+  topic: test2
+  namesrvAddr: 101.200.125.226:9876
+  groupName: group2
+  sink:
+    apiVersion: eventing.knative.dev/v1alpha1
+    kind: Broker
+    name: weather
