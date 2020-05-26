@@ -11,9 +11,8 @@ spec:
       name: alirocketmqsource-secret
       key: alirocketmqsource
   topic: topic-knative
- # namesrvAddr: 101.200.125.226:9876
   groupName: GID_Knative
-  namespace: MQ_INST_1124876893846781_BcF4df8k
+  namespace: MQ_INST_xxxx
   sink:
     apiVersion: eventing.knative.dev/v1alpha1
     kind: Broker
